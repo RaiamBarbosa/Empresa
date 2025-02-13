@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "Empresa.Controllers.AuthController",
+    "Method": "Listar",
+    "RelativePath": "api/Autenticacao/Listar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Empresa.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Autenticacao/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Empresa.Models.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

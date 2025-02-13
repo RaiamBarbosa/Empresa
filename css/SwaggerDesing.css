@@ -1,0 +1,34 @@
+﻿body {
+    background-color: #2e2e2e;
+    color: #ffffff; /* Define a cor do texto como branco */
+}
+
+.swagger-ui .topbar {
+    background-color: #333;
+}
+
+    .swagger-ui .topbar a {
+        color: #ffffff; /* Define a cor do texto como branco */
+    }
+
+.swagger-ui .info {
+    background-color: #555; /* Um pouco mais claro */
+    color: #ffffff; /* Define a cor do texto como branco */
+}
+
+.swagger-ui .scheme-container {
+    background-color: #555; /* Um pouco mais claro */
+}
+
+.swagger-ui .opblock-summary {
+    background-color: #555; /* Um pouco mais claro */
+    color: #ffffff; /* Define a cor do texto como branco */
+}
+
+.swagger-ui .opblock-description-wrapper {
+    color: #ffffff; /* Define a cor do texto como branco */
+}
+
+.swagger-ui .opblock-body pre {
+    color: #ffffff; /* Define a cor do texto como branco */
+}
