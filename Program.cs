@@ -1,6 +1,10 @@
 using Empresa.Configuration;
+using Empresa.Data;
 using Empresa.Services;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,9 +12,11 @@ builder.Services.AddControllers();
 
 builder.JwtConfig().SwaggerConfig();
 
-//Injector//
 builder.Services.AddScoped<TokenGenerator>();
+
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtConfig"));
+
+
 
 var app = builder.Build();
 
