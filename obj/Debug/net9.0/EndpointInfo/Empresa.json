@@ -12,27 +12,69 @@
     }
   ],
   "paths": {
-    "/api/Autenticacao/Login": {
+    "/api/Acess/Validar-Autorizacao": {
+      "get": {
+        "tags": [
+          "Acess"
+        ],
+        "summary": "Listagem de Itens.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/atenticacao/registrar-usuario": {
       "post": {
         "tags": [
           "Auth"
         ],
-        "summary": "Autenticacao com Email e Password.",
+        "summary": "Registrar Usuário",
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/User"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
+                "required": [
+                  "ConfirmPassword",
+                  "Email",
+                  "Password",
+                  "Usuario"
+                ],
+                "type": "object",
+                "properties": {
+                  "Usuario": {
+                    "type": "string"
+                  },
+                  "Email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "Password": {
+                    "maxLength": 6,
+                    "minLength": 6,
+                    "type": "string"
+                  },
+                  "ConfirmPassword": {
+                    "maxLength": 6,
+                    "minLength": 6,
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Usuario": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "Password": {
+                  "style": "form"
+                },
+                "ConfirmPassword": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -44,12 +86,43 @@
         }
       }
     },
-    "/api/Autenticacao/Listar": {
+    "/api/atenticacao/logar-usuario": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Logar  Usuário",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginUsuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginUsuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginUsuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/atenticacao/role": {
       "get": {
         "tags": [
           "Auth"
         ],
-        "summary": "Listagem de Itens.",
         "responses": {
           "200": {
             "description": "OK"
@@ -60,16 +133,21 @@
   },
   "components": {
     "schemas": {
-      "User": {
+      "LoginUsuario": {
+        "required": [
+          "password",
+          "usuario"
+        ],
         "type": "object",
         "properties": {
-          "email": {
-            "type": "string",
-            "nullable": true
+          "usuario": {
+            "minLength": 1,
+            "type": "string"
           },
           "password": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 6,
+            "minLength": 6,
+            "type": "string"
           }
         },
         "additionalProperties": false

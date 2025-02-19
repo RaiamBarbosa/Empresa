@@ -4,15 +4,32 @@
         <name>Empresa</name>
     </assembly>
     <members>
-        <member name="M:Empresa.Controllers.AuthController.Login(Empresa.Models.User)">
-            <summary>
-            Autenticacao com Email e Password.
-            </summary>
-        </member>
-        <member name="M:Empresa.Controllers.AuthController.Listar">
+        <member name="M:Empresa.Controllers.AcessController.Listar">
             <summary>
             Listagem de Itens.
             </summary>
+        </member>
+        <member name="M:Empresa.Controllers.AuthController.RegistrarUsuario(Empresa.Models.RegisterUsuario)">
+            <summary>
+            Registrar Usuário
+            </summary>
+        </member>
+        <member name="M:Empresa.Controllers.AuthController.Login(Empresa.Models.LoginUsuario)">
+            <summary>
+            Logar  Usuário
+            </summary>
+        </member>
+        <member name="T:Empresa.Migrations.MV1">
+            <inheritdoc />
+        </member>
+        <member name="M:Empresa.Migrations.MV1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Empresa.Migrations.MV1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Empresa.Migrations.MV1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
         </member>
     </members>
 </doc>

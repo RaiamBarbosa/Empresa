@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Empresa</name>
+    </assembly>
+    <members>
+        <member name="M:Empresa.Controllers.AuthController.Login(Empresa.Models.User)">
+            <summary>
+            Autenticacao com Email e Senha.
+            </summary>
+        </member>
+        <member name="M:Empresa.Controllers.AuthController.Listar">
+            <summary>
+            Listagem de Itens.
+            </summary>
+        </member>
+        <member name="T:Empresa.Migrations.MV1">
+            <inheritdoc />
+        </member>
+        <member name="M:Empresa.Migrations.MV1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Empresa.Migrations.MV1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Empresa.Migrations.MV1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

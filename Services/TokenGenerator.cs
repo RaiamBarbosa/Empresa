@@ -17,7 +17,7 @@ namespace Empresa.Services
             _configuration = configuration;
         }
 
-        public string GerarToken(User user)
+        public string GerarToken(LoginUsuario usuario)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
 
@@ -25,9 +25,8 @@ namespace Empresa.Services
             {
                 Subject = new ClaimsIdentity(
                 [
-                    new Claim(JwtRegisteredClaimNames.Sub,user.Email),
+                    new Claim(JwtRegisteredClaimNames.Sub,usuario.Usuario),
                     new Claim(JwtRegisteredClaimNames.Aud, _configuration["JwtConfig:Audience"]??""),
-                    new Claim(JwtRegisteredClaimNames.Iss, _configuration["JwtConfig:Issuer"]?? ""),
                 ]),
                 Expires = DateTime.UtcNow.AddMinutes(int.Parse(_configuration["JwtConfig:Expire"] ?? "")),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtConfig:Key"] ?? "")), SecurityAlgorithms.HmacSha256Signature)
@@ -44,7 +43,7 @@ namespace Empresa.Services
             var tokenDescriptor = new SecurityTokenDescriptor()
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.UtcNow.AddMinutes(int.Parse(_configuration["JwtConfig:Expire"] ?? "")),
+                Expires = DateTime.UtcNow.AddHours(int.Parse(_configuration["JwtConfig:Expire"] ?? "")),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtConfig:Key"] ?? "")), SecurityAlgorithms.HmacSha256Signature)
             };
 

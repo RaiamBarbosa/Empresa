@@ -1,11 +1,12 @@
-﻿
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Empresa.Data
+namespace Empresa.Data 
+
 {
-    public class AppDbContext : Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext
-    {
-        public AppDbContext (DbContextOptions options) : base() { }
+    public class AppDbContext : IdentityDbContext
+    {   
+       public AppDbContext (DbContextOptions<AppDbContext> options) : base(options) { }
     }
 
 }

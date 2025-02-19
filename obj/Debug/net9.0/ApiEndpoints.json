@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "Empresa.Controllers.AuthController",
+    "ContainingType": "Empresa.Controllers.AcessController",
     "Method": "Listar",
-    "RelativePath": "api/Autenticacao/Listar",
+    "RelativePath": "api/Acess/Validar-Autorizacao",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -12,17 +12,58 @@
   {
     "ContainingType": "Empresa.Controllers.AuthController",
     "Method": "Login",
-    "RelativePath": "api/Autenticacao/Login",
+    "RelativePath": "api/atenticacao/logar-usuario",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "Empresa.Models.User",
+        "Name": "login_Usuario",
+        "Type": "Empresa.Models.LoginUsuario",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Empresa.Controllers.AuthController",
+    "Method": "RegistrarUsuario",
+    "RelativePath": "api/atenticacao/registrar-usuario",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Usuario",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ConfirmPassword",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Empresa.Controllers.AuthController",
+    "Method": "RoleSql",
+    "RelativePath": "api/atenticacao/role",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]
